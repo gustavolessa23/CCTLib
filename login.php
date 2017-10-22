@@ -9,6 +9,7 @@ $userType="";
 $usernameErr="";
 $username="";
 $password="";
+$passErr="";
 $userTypeErr="";
 
 if(isset($_SESSION["pageOrigin"])){
@@ -33,10 +34,10 @@ if($_POST){
 
     if(empty($usernameErr) && empty($userTypeErr) ){
         try {
-        $host = '127.0.0.1';
-        $dbname = 'cctlib';
-        $user = 'root';
-        $pass = '';
+        $host = 'sql2.freemysqlhosting.net';
+        $dbname = 'sql2200059';
+        $user = 'sql2200059';
+        $pass = 'hA7*cK2*';
         # MySQL with PDO_MYSQL
         $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 
@@ -76,7 +77,7 @@ if($_POST){
 
 
     		} else {
-    		    $message= 'Sorry your log in details are not correct';
+    		    $message= '<span class="error">Sorry your log in details are not correct</span>';
     		}
 
 
@@ -99,13 +100,15 @@ if($_POST){
 </head>
 <body>
 <h2>CCT Library Login</h2><br></br>
-<form class='form-style' action="login.php" method="post">
-Username: <input type="text" name="username" value="<?php echo $username; ?>"/>
-Password: <input type="password" name="password" value="<?php echo $password; ?>"/>
+<form class='form-style' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+Username <input type="text" name="username" value="<?php echo $username; ?>" required="required" title="Username containing at least 4 characters"/>
+  <span class ="error"> <?php echo $usernameErr; ?></span>
+Password <input type="password" name="password" pattern ="^((?=.*[A-Za-z])(?=.*\d)[\S]{6,10})$" value="<?php echo $password; ?>" required="required" title="Password must contain digits and numbers, between 6 and 10 characters"/>
+  <span class ="error"> <?php echo $passErr; ?></span>
 User type: <br>
-<input type="radio" name="usertype" <?php if (!empty($userType) && $userType=="admin") echo "checked";?> value="admin">Admin
-<input type="radio" name="usertype" <?php if (!empty($userType) && $userType=="student") echo "checked";?> value="student">Student
-  <span class="error">* <?php echo $userTypeErr;?></span>
+  <input type="radio" name="usertype" <?php if (!empty($userType) && $userType=="admin") echo "checked";?> value="admin">Admin
+  <input type="radio" name="usertype" <?php if (!empty($userType) && $userType=="student") echo "checked";?> value="student">Student
+    *<span class="error"> <?php echo $userTypeErr;?></span>
 <input type="submit" name="submit" value="Login" class='button'/>
 <?php
 
