@@ -80,3 +80,6 @@ function showTable($stmt){
 }
 
 ?>
+<?php include('backbutton.php'); ?>
+</body>
+</html>

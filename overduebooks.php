@@ -74,5 +74,6 @@ function showTable($stmt){
 
 </div>
 </form>
+<?php include('backbutton.php'); ?>
 </body>
 </html>

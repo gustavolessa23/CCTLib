@@ -131,3 +131,6 @@
 
 <input type="submit" name="confirm" value="Confirm Checkout"/>
 </div>
+<?php include('backbutton.php'); ?>
+</body>
+</html>

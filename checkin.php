@@ -98,3 +98,6 @@ function setAvailable($book_id){
 
 <input type="submit" name="confirm" value="Confirm Check in"/>
 </div>
+<?php include('backbutton.php'); ?>
+</body>
+</html>
