@@ -12,6 +12,7 @@
 <?php
 include('init.php');
 include('checkstudent.php');
+include('displaynotifications.php');
 
 $searchRaw = $_SESSION['searchtext'];
 $search = '%'.$searchRaw.'%';

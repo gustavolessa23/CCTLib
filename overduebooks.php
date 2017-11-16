@@ -11,6 +11,7 @@
 <?php
 include('init.php');
 include('checkadmin.php');
+include('displaynotifications.php');
 
 ?>
 
@@ -31,7 +32,7 @@ if ($stmt->execute()) {
     echo "<tr><th>There is no overdue books!</th>";
     echo "</table>";
   } else {
-    showTable($stmt);
+    showTable($res);
   }
 } else {
 	echo "Some execution error.";
@@ -45,8 +46,8 @@ echo "PDO error :" . $exception->getMessage();
 
 include('errordb.php');
 // get the rows and put it in a variable
-function showTable($stmt){
-  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+function showTable($rows){
+//  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   echo "<table>";
   echo "<tr><th>Student ID</th><th>Book Title</th><th>Date Due</th><th>Checkin</th></tr>";

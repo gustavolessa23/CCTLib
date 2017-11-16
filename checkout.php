@@ -12,7 +12,7 @@
 
 	include('init.php');
 	include('checkstudent.php');
-  include('setprevious.php');
+include('displaynotifications.php');
 
   if(isset($_GET['id'])){
     $_SESSION['book_id'] = $_GET['id'];

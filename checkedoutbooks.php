@@ -24,7 +24,7 @@ include('displaynotifications.php');
 try{
   require 'sqlconnection.php';
   if($_SESSION['usertype'] == "admin"){
-    $sql = "SELECT bs.student_id, b.title, bs.title_id FROM book_student bs INNER JOIN books b WHERE bs.title_id=b.title_id;";
+    $sql = "SELECT bs.student_id, b.title, bs.title_id, bs.date_return FROM book_student bs INNER JOIN books b WHERE bs.title_id=b.title_id;";
     $stmt = $DBH->prepare($sql);
   } else if ($_SESSION['usertype'] == "student"){
     $sql = "SELECT bs.student_id, b.title, bs.title_id, bs.date_return FROM book_student bs INNER JOIN books b WHERE bs.title_id=b.title_id AND bs.student_id=:student_id;";
@@ -37,7 +37,7 @@ try{
   	echo "Some execution error.";
   }
 } catch(PDOException $e) {
-echo "PDO error :" . $exception->getMessage();
+echo "PDO error :" . $e->getMessage();
 }
 
 include('errordb.php');
@@ -51,7 +51,7 @@ function showTable($stmt){
   } else {
     echo "<table>";
     if($_SESSION['usertype'] == "admin"){
-      echo "<tr><th>Student ID</th><th>Book Title</th><th>Check in</th></tr>";
+      echo "<tr><th>Student ID</th><th>Book Title</th><th>Due date</th><th>Check in</th></tr>";
       foreach($rows as $row){
       	echo "<tr>";
         echo "<td>";
@@ -60,6 +60,9 @@ function showTable($stmt){
       	echo "<td>";
       	echo $row['title'];
       	echo "</td>";
+        echo "<td>";
+        echo $row['date_return'];
+        echo "</td>";
       	echo "<td>";
       	echo "<a href=checkin.php?id=".$row['title_id'].">Check in</a>";
       	echo "</td>";
