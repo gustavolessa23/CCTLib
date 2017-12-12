@@ -132,5 +132,6 @@ include('displaynotifications.php');
 <input type="submit" name="confirm" value="Confirm Checkout"/>
 </div>
 <?php include('backbutton.php'); ?>
+<?php include('footer.php'); ?>
 </body>
 </html>

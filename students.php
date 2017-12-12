@@ -49,7 +49,7 @@ if(isset($_POST['search'])){
 }
 
 ?>
-<h2 class="login-header">Student's Page</h2>
+<h2 class="login-header">Students Page</h2>
 <div class="login">
   <div class="login-triangle"></div>
 <h2 class="login-header">Search Books</h2>
@@ -57,7 +57,7 @@ if(isset($_POST['search'])){
 <input type="radio" name="searchoption" value="title"> Title
 <input type="radio" name="searchoption" value="author"> Author
 <input type="radio" name="searchoption" value="isbn"> ISBN
-<br><input type="text" name="searchtext" value="<?php echo $searchText; ?>" title="Search"/>
+<br><input type="text" placeholder="Type title, author or ISBN" name="searchtext" value="<?php echo $searchText; ?>" title="Search"/>
 <span class="error"> <?php echo $isbn_err;?></span>
 <span class="error"> <?php echo $searchFieldErr;?></span>
 <br><input type="submit" name="search" value="Search"/>
@@ -69,5 +69,6 @@ if(isset($_POST['search'])){
 <input type="submit" name="checkedout" value="List Checked Out Books" class='button'/>
 </form>
 </div>
+<?php include('footer.php'); ?>
 </body>
 </html>

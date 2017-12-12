@@ -69,12 +69,9 @@ function showTable($stmt){
       	echo "</tr>";
       }
     } else if ($_SESSION['usertype'] == "student"){
-      echo "<tr><th>Student ID</th><th>Book Title</th><th>Due date</th><th>Return</th></tr>";
+      echo "<tr><th>Book Title</th><th>Due date</th><th>Return</th></tr>";
       foreach($rows as $row){
       	echo "<tr>";
-        echo "<td>";
-      	echo $row['student_id'];
-      	echo "</td>";
       	echo "<td>";
       	echo $row['title'];
       	echo "</td>";
@@ -95,5 +92,6 @@ function showTable($stmt){
 </div>
 </form>
 <?php include('backbutton.php'); ?>
+<?php include('footer.php'); ?>
 </body>
 </html>

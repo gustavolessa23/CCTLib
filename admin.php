@@ -96,7 +96,7 @@ function registerBook($title, $author, $isbn){
 
 
 ?>
-<h2 class="login-header">Admin's Page</h2>
+<h2 class="login-header">Admin Page</h2>
 
 <div class="login">
   <div class="login-triangle"></div>
@@ -127,5 +127,6 @@ function registerBook($title, $author, $isbn){
 <input type="submit" name="overdue" value="List Overdue Books" class='button'/>
 </form>
 </div>
+<?php include('footer.php'); ?>
 </body>
 </html>

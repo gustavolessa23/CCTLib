@@ -67,6 +67,7 @@ body {
   font-family: inherit;
   font-size: 0.95em;
 }
+
 .login input[type="text"],
 .login input[type="password"] {
   background: #fff;
@@ -79,6 +80,25 @@ body {
 .login input[type="password"]:focus {
   border-color: #888;
 }
+
+.parent{
+  margin: auto;
+  width: 100%;
+  border: 3px;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+
+a:link {color: black;}      /* unvisited link */
+a:visited {color: black;}   /* visited link */
+a:hover {color: black;}     /* mouse over link */
+a:active {color: black;}    /* selected link */
 
 .login input[type="submit"] {
   background: #28d;

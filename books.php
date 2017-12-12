@@ -48,13 +48,10 @@ function showTable($stmt){
   echo '<h2 class="login-header">Books</h2>';
   echo '<form class="login-container">';
   echo "<table>";
-  echo "<tr><th>ID</th><th>Title</th><th>Author</th><th>ISBN</th><th>Available</th></tr>";
+  echo "<tr><th>Title</th><th>Author</th><th>ISBN</th><th>Available</th></tr>";
 
   foreach($rows as $row){
   	echo "<tr>";
-  	echo "<td>";
-  	echo $row['title_id'];
-  	echo "</td>";
   	echo "<td>";
   	echo $row['title'];
   	echo "</td>";
@@ -65,7 +62,7 @@ function showTable($stmt){
   	echo $row['isbn'];
   	echo "</td>";
   	echo "<td>";
-  	echo $row['available'];
+  	echo "&emsp;&ensp;".$row['available'];
   	echo "</td>";
   	echo "<td>";
     if($row['available'] == 'Yes'){
@@ -82,5 +79,6 @@ function showTable($stmt){
 
 ?>
 <?php include('backbutton.php'); ?>
+<?php include('footer.php'); ?>
 </body>
 </html>

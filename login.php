@@ -124,5 +124,6 @@ if(!empty($message)){
 </form>
 </div>
 </form>
+<?php include('footer.php'); ?>
 </body>
 </html>

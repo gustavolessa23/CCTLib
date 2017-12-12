@@ -167,5 +167,6 @@ function registerUser($studentid, $username, $passHashed){
 </div>
 
 </form>
+<?php include('footer.php'); ?>
 </body>
 </html>

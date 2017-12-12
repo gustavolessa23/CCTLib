@@ -76,5 +76,6 @@ function showTable($rows){
 </div>
 </form>
 <?php include('backbutton.php'); ?>
+<?php include('footer.php'); ?>
 </body>
 </html>
